@@ -3,194 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Area - The Last Wish</title>
-    <link rel="stylesheet" href="style.css">
+    <title>The Last Wish - Elite Membership</title>
+    <link rel="stylesheet" href="member.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        // Fix for missing trailing slash
+        if (window.location.pathname.endsWith('/member')) {
+            window.location.replace(window.location.href + '/');
+        }
+    </script>
 </head>
 <body>
     <div class="cosmic-background">
         <div id="particles-container"></div>
+        <div class="glow-overlay"></div>
     </div>
 
     <div class="member-container">
-        <!-- Back Button -->
-        <a href="../index.html" class="btn-back">
-            <span class="back-icon">←</span> Back to Sales Page
-        </a>
+        <!-- Navigation -->
+        <nav class="top-nav">
+            <a href="../index.html" class="btn-back">
+                <span class="back-icon">←</span> Exit Sanctuary
+            </a>
+            <div class="user-status">
+                <span class="status-label">Access Level:</span>
+                <span class="status-value">INFINITE ELITE</span>
+            </div>
+        </nav>
 
         <!-- Hero Section -->
         <header class="hero-experience">
-            <h1>Welcome to the Beginning of Your New Reality</h1>
-            <p>For the next 30 days, you will enter a new energetic frequency designed to align your mind, emotions, and subconscious with abundance, prosperity, opportunity, and inner power.</p>
+            <div class="badge">ESTABLISHED 2024</div>
+            <h1>The 30-Day Transformation</h1>
+            <p class="subtitle">Welcome to the Architect's Circle. Every module is now unlocked for your total immersion.</p>
             
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-icon">🕒</span> 11 Minutes Per Night
+                    <span class="stat-icon">✨</span> Frequency Level: Max
                 </div>
                 <div class="stat-item">
-                    <span class="stat-icon">✨</span> High Frequency Level: 01
+                    <span class="stat-icon">💎</span> 30 Modules Unlocked
                 </div>
                 <div class="stat-item">
-                    <span class="stat-icon">🔥</span> 0 Day Streak
+                    <span class="stat-icon">🌑</span> Dark Mode Active
                 </div>
             </div>
-
-            <button class="btn-start" onclick="openModule('intro')">Start Experience</button>
         </header>
 
-        <!-- Progress Section -->
+        <!-- Progress Tracking -->
         <section class="overall-progress">
-            <div class="progress-header">
-                <span>Journey Progress</span>
+            <div class="progress-info">
+                <span>Sanctuary Progress</span>
                 <span id="progress-percent">0%</span>
             </div>
-            <div class="progress-bar-bg">
-                <div class="progress-bar-fill" id="progress-fill"></div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill"></div>
             </div>
         </section>
 
-        <!-- Modules Grid -->
+        <!-- Main Journey Grid -->
         <section class="modules-area">
-            <h2 class="section-title">The Transformation Path</h2>
-            <div class="modules-grid">
-                <!-- Intro -->
-                <div class="module-card" onclick="openModule('intro')">
-                    <span class="module-day">Introduction</span>
-                    <h3>Before You Begin</h3>
-                    <p>Discover the philosophy of The Last Wish and prepare your environment for total immersion.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Completed</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 1 -->
-                <div class="module-card" onclick="openModule('day1')">
-                    <span class="module-day">Day 01</span>
-                    <h3>Pineal Awakening</h3>
-                    <p>Disconnect from survival mode and enter the frequency of receptivity.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Available</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 3 -->
-                <div class="module-card" onclick="openModule('day3')">
-                    <span class="module-day">Day 03</span>
-                    <h3>Opening Abundance</h3>
-                    <p>Dissolve energetic resistance and emotional conditioning around wealth.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Available</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 7 -->
-                <div class="module-card locked">
-                    <span class="module-day">Day 07</span>
-                    <h3>Prosperity Alignment</h3>
-                    <p>Become magnetic to opportunities through gratitude amplification.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Locked</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 10 -->
-                <div class="module-card locked">
-                    <span class="module-day">Day 10</span>
-                    <h3>Wealth Frequency</h3>
-                    <p>Reprogram your wealth identity and embrace luxury without guilt.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Locked</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 21 -->
-                <div class="module-card locked">
-                    <span class="module-day">Day 21</span>
-                    <h3>Total Expansion</h3>
-                    <p>Remove subconscious limitations and expand your personal reality.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Locked</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
-
-                <!-- Day 30 -->
-                <div class="module-card locked">
-                    <span class="module-day">Day 30</span>
-                    <h3>The Last Wish</h3>
-                    <p>The final ritual. Step permanently into your new chosen reality.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Locked</span>
-                        <a href="#" class="btn-open">Open Module</a>
-                    </div>
-                </div>
+            <h2 class="section-title">The Path of the Master</h2>
+            <div class="modules-grid" id="main-journey-grid">
+                <!-- Day modules will be injected here by JS -->
             </div>
         </section>
 
-        <!-- Bonus Area -->
+        <!-- Bonus Masterclasses -->
         <section class="bonus-area">
-            <h2 class="section-title">Luxury Bonus Collection</h2>
-            <div class="modules-grid">
-                <div class="module-card" onclick="openModule('bonus1')">
-                    <span class="module-day">Bonus #1</span>
-                    <h3>The Official Last Wish Guide</h3>
-                    <p>Onboarding, optimization, and success acceleration strategies.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Unlocked</span>
-                        <a href="#" class="btn-open">View Bonus</a>
-                    </div>
-                </div>
-                <div class="module-card" onclick="openModule('bonus2')">
-                    <span class="module-day">Bonus #2</span>
-                    <h3>Pineal Decalcification Plan</h3>
-                    <p>Biological and lifestyle protocols for maximum frequency reception.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Unlocked</span>
-                        <a href="#" class="btn-open">View Bonus</a>
-                    </div>
-                </div>
-                <div class="module-card" onclick="openModule('bonus3')">
-                    <span class="module-day">Bonus #3</span>
-                    <h3>Wealth Scripts</h3>
-                    <p>Immersion scripts for morning and night manifestation rituals.</p>
-                    <div class="module-footer">
-                        <span class="module-status">Unlocked</span>
-                        <a href="#" class="btn-open">View Bonus</a>
-                    </div>
-                </div>
+            <h2 class="section-title">The Vault: Luxury Bonuses</h2>
+            <div class="modules-grid" id="bonus-grid">
+                <!-- Bonus modules will be injected here by JS -->
             </div>
         </section>
 
-        <!-- Community Section -->
+        <!-- Community -->
         <section class="community-section">
-            <span class="module-day">VIP ACCESS</span>
-            <h2>High Frequency Community</h2>
-            <p>Connect with other initiated members, share your abundance experiences, and amplify the collective energy of The Last Wish.</p>
-            <button class="btn-start" style="margin-top: 20px; padding: 15px 40px; font-size: 0.9rem;">Join the Collective</button>
+            <div class="community-card">
+                <span class="module-tag">VIP COLLECTIVE</span>
+                <h2>High Frequency Presence</h2>
+                <p>You are now part of the 0.1% who have accessed the Last Wish technology. Share your expansion.</p>
+                <button class="btn-gold">Enter the Collective</button>
+            </div>
         </section>
 
-        <!-- Final Experience Section -->
-        <section class="final-experience">
-            <div class="glow-text">Your New Reality Begins Now</div>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">"You are no longer surviving. You are now choosing what to receive."</p>
-        </section>
+        <footer class="member-footer">
+            <div class="glow-line"></div>
+            <p>&copy; 2024 THE LAST WISH. ALL RIGHTS RESERVED. PRIVATE MEMBER ACCESS.</p>
+        </footer>
     </div>
 
-    <!-- Lesson Modal -->
+    <!-- Immersive Lesson Modal -->
     <div id="lesson-modal" class="lesson-modal">
-        <span class="close-modal" onclick="closeModule()">&times;</span>
-        <div class="lesson-content" id="lesson-content">
-            <!-- Dynamic Content Injection -->
+        <div class="modal-overlay" onclick="closeModule()"></div>
+        <div class="modal-body">
+            <span class="close-modal" onclick="closeModule()">&times;</span>
+            <div class="lesson-scroll-container">
+                <div id="lesson-content">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="member.js"></script>
 </body>
 </html>
