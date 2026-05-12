@@ -471,3 +471,8 @@ body {
         font-size: 18px;
     }
 }
+
+/* Delay Class */
+.hide-delay {
+    display: none !important;
+}
